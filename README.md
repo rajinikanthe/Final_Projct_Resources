@@ -65,6 +65,11 @@
 ## Docker installation
 > Reference link
 > > https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+  
+## Terrafrom installation
+ > Reference link
+  >> https://www.terraform.io/cli/install/apt
+  
 ## Reference for kubectl and eksctl installation 
 
 > https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
