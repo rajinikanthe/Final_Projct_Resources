@@ -22,32 +22,39 @@
 > Once the pod is restarted, reconnect using redis-cli and verify if key-value pairs are present
 >> Example redis commands:
 
- >>>  Connect to redis-server using redis-cli: redis-cli -h <redis_host_or_service_name> -p <port>
+` ##  Connect to redis-server using redis-cli: redis-cli -h <redis_host_or_service_name> -p <port> `
 
->>>> Set key=value: SET foo 1
+  
+` Set key=value: SET foo 1 `
 
->>>> Get value of key: GET foo
+` Get value of key: GET foo `
 
 ## Test auto scaling of the application. 
 ### After having deployed the upg-loadme application, it’s important to ensure that your application is able to scale well automatically in case of a surge in usage. Kubernetes has the concept of Horizontal Pod Autoscaler for handling scale up/down of deployment & statefulsets. 
 > you will first ensure that an HPA is configured for scaling the deployed application and later test the scaling actions by simulating requests to the application using Apache Benchmark (ab) tool.
 
 > List all hpa in demo namespace: 
-  - kubectl get hpa -n demo
+
+  `  kubectl get hpa -n demo `
+  
 > Install prometheus on the cluster using the official helm chart
+
 >Use kubectl port-forward to access the prometheus server from your system via service of prometheus.
+
 > Generate load on upg-loadme app using ab tool to test hpa.
   - ab -n100 -c10 'http://<INSERT-LB-DNS>/load?scale=100'
   - Increase n to run the test for longer time by increasing request count 
   - Increase value of scale to 300 for higher load per call
+ 
  > command used to monitor the load on the pods
- >> - kubectl top pods 
+ 
+ `  kubectl top pods -n demo ` 
 
 > Increase the load to trigger autoscaling of the upg-loadme app.
 
 > Stop load test (ab command) and wait for pods and nodes to scale down.
   
->> - kubectl get hpa -n demo
+` kubectl get hpa -n demo `
   
 > By default, pods downscale may take 5 min after utilization drops below threshold & cluster-autoscaler may take 10 min to scale down nodes.
   
