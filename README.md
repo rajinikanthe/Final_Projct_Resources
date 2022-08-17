@@ -58,6 +58,10 @@
   
 > By default, pods downscale may take 5 min after utilization drops below threshold & cluster-autoscaler may take 10 min to scale down nodes.
   
+## AWS-CLI installation
+  > Reference link
+  > > https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+  
 ## Docker installation
 > Reference link
 > > https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
