@@ -106,6 +106,6 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
        effect: "NoSchedule"
     desiredCapacity: 1
     minSize: 1
-    maxSize: 1
+    maxSize: 5
     subnets:
       - my-public-potureddyhari-a
