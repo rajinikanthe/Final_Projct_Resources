@@ -1,4 +1,4 @@
-# Kubernates_Capstone_Project_PotureddyHari
+# Kubernates_Capstone_Project_rk
 ## Setup EKS Cluster
 > In this project we are supposed to set up an EKS cluster using a custom VPC. By default, EKS can create all VPC resources but we want to use our terraform created VPC resources instead. 
 
